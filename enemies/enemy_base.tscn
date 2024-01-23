@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnbjvyuccfti"]
+
+[ext_resource type="Script" path="res://enemies/enemy_base.gd" id="1_cs8eo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6oao"]
+
+[node name="enemy_base" type="Node2D"]
+script = ExtResource("1_cs8eo")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+root_node = NodePath("../Sprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_t6oao")
